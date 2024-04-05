@@ -3,14 +3,19 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float Speed;
+    [SerializeField] private float CurrentSpeed;
+    [SerializeField] private float WalkSpeed;
+    [SerializeField] private float SprintSpeed;
+
+
     [SerializeField] private float RotSpeed;
     [SerializeField] private bool isPc;
-
     private Vector2 Move, mouseLook, joystickLook;
     private Vector3 _RotTarget;
+
     private void Start()
     {
+        CurrentSpeed = WalkSpeed;
         if (Application.platform == (RuntimePlatform.WindowsPlayer | RuntimePlatform.OSXPlayer | RuntimePlatform.LinuxPlayer)) isPc = true;
         else isPc=false;
     }
@@ -25,6 +30,16 @@ public class PlayerMovement : MonoBehaviour
     public void OnJoystickLook(InputAction.CallbackContext context)
     {
         joystickLook = context.ReadValue<Vector2>();
+    }
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        CurrentSpeed = Mathf.Lerp(CurrentSpeed, SprintSpeed, 1);
+    }
+
+    public void OnSprintFinish(InputAction.CallbackContext context)
+    {
+        CurrentSpeed = Mathf.Lerp(CurrentSpeed, WalkSpeed, 1);
+
     }
 
     private void Update()
@@ -50,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 Movement = new(Move.x, 0f, Move.y);
         if (Movement != Vector3.zero)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Movement),RotSpeed);
-        transform.Translate( Speed * Time.deltaTime * Movement, Space.World); 
+        transform.Translate( CurrentSpeed * Time.deltaTime * Movement, Space.World); 
     }
 
     private void MovePlayerWithAim()
@@ -70,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
         Vector3 movement = new(Move.x, 0f, Move.y);
-        transform.Translate(Speed * Time.deltaTime * movement, Space.World);
+        transform.Translate(CurrentSpeed * Time.deltaTime * movement, Space.World);
     }
 
 
