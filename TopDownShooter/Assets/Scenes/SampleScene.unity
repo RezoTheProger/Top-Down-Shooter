@@ -918,6 +918,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 64729b36-72fd-43a3-afa1-82ceb71dcb41
     m_ActionName: Player/Sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1585686311}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnSprintFinish
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f8d7bd04-3a92-44ee-8234-9a90af747e0b
+    m_ActionName: Player/SprintFinish[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -936,8 +952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentSpeed: 0
-  WalkSpeed: 10
-  SprintSpeed: 100
+  WalkSpeed: 5
+  SprintSpeed: 15
   RotSpeed: 0.15
   isPc: 0
 --- !u!1 &1988484467
