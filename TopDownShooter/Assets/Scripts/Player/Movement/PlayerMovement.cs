@@ -31,12 +31,12 @@ public class PlayerMovement : MonoBehaviour
     {
         joystickLook = context.ReadValue<Vector2>();
     }
-    public void OnSprint(InputAction.CallbackContext context)
+    public void OnSprint()
     {
         CurrentSpeed = Mathf.Lerp(CurrentSpeed, SprintSpeed, 1);
     }
 
-    public void OnSprintFinish(InputAction.CallbackContext context)
+    public void OnSprintFinish()
     {
         CurrentSpeed = Mathf.Lerp(CurrentSpeed, WalkSpeed, 1);
 

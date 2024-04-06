@@ -741,6 +741,7 @@ GameObject:
   - component: {fileID: 1585686307}
   - component: {fileID: 1585686306}
   - component: {fileID: 1585686311}
+  - component: {fileID: 1585686312}
   - component: {fileID: 1585686310}
   m_Layer: 0
   m_Name: player
@@ -907,7 +908,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1585686311}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnSprint
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -923,7 +924,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1585686311}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnSprintFinish
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -934,6 +935,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f8d7bd04-3a92-44ee-8234-9a90af747e0b
     m_ActionName: Player/SprintFinish[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1585686312}
+        m_TargetAssemblyTypeName: WeaponUser, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 84d0e5a5-7b4d-4563-9562-2582853ad1c0
+    m_ActionName: Player/Fire[/Mouse/leftButton,/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1585686312}
+        m_TargetAssemblyTypeName: WeaponUser, Assembly-CSharp
+        m_MethodName: OnReload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1889c7b-2608-4ca2-ab59-c8c2f4fdaaea
+    m_ActionName: Player/reload[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -956,6 +989,27 @@ MonoBehaviour:
   SprintSpeed: 15
   RotSpeed: 0.15
   isPc: 0
+--- !u!114 &1585686312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585686305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0fb0aad1914b846902cc3f0cfeb4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  magSize: 0
+  bulletsPerShot: 0
+  bulletsLeft: 0
+  timeBetweenShots: 0
+  spread: 0
+  range: 0
+  reloadTime: 0
+  FastShot: 0
 --- !u!1 &1988484467
 GameObject:
   m_ObjectHideFlags: 0
