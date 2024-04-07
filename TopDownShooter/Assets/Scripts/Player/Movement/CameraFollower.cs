@@ -13,6 +13,8 @@ public class CameraFollower : MonoBehaviour
         if (target != null)
         {
             Vector3 targetPos = target.position+ Offset;
+
+            
             transform.position = Vector3.SmoothDamp(transform.position, targetPos,ref velocity,Smoother);
         }
     }

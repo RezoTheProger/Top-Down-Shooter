@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
 
         }
+        else if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Gun")) return;
         else Destroy(gameObject);
     }
 }
