@@ -70,14 +70,10 @@ namespace Guns
 
             GameObject inst = Instantiate(ball, attackPoint.position, attackPoint.rotation);
             Rigidbody rb = inst.GetComponent<Rigidbody>();
-            Transform tr = inst.GetComponent<Transform>();
             rb.AddForce(speed * attackPoint.up, ForceMode.Impulse);
-            float dist = Vector3.Distance(transform.position,tr.position);
-           
+     
 
-            if (dist > range) Destroy(inst);
-
-            Destroy(inst,3);
+            Destroy(inst,5);
         }
        
     }
