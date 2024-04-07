@@ -1,15 +1,19 @@
 using Guns;
-
-public class WeaponUser : Gun
+using UnityEngine;
+public class WeaponUser : MonoBehaviour
 {
-    public void OnShoot()
+     public  Gun Gun;
+    public void OnFire()
     {
-        if(readyToShoot && bulletsLeft>0 )
-        Gun.Shoot();
+        if (Gun != null)
+        {
+            Gun.Shoot();
+            Debug.Log("pew");
+        }
     }
     public void OnReload()
-    { 
-        if(!reloading && bulletsLeft != magSize)
-        Gun.Reload();
+    {
+        if (Gun != null)
+            Gun.Reload();
     }
 }

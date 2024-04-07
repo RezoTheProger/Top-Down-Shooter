@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
@@ -42,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+ 
     private void Update()
     {
         if (isPc)
