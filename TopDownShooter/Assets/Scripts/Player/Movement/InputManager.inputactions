@@ -215,17 +215,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d66113bf-c8d0-41c9-beb7-685fe975129e",
-                    "path": "<Touchscreen>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "JoystickLook",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "054a7db6-d2b1-4bcb-b9e1-d5d713d56e77",
                     "path": "<Keyboard>/shift",
                     "interactions": "Hold",
