@@ -1,14 +1,13 @@
-using System.Collections;
 using UnityEngine;
 namespace Guns
 {
     public  class Gun : MonoBehaviour
     {
-        [SerializeField] protected int  damage, magSize, bulletsPerShot, bulletsLeft, bulletsShot;
-        [SerializeField] private float speed, timeBetweenShots, spread, range, reloadTime;
-        protected bool FastShot;
-        protected bool shooting, readyToShoot, reloading;
-        [SerializeField] protected Transform attackPoint;
+        [SerializeField] private  int  damage, magSize, bulletsPerShot, bulletsLeft, bulletsShot;
+        [SerializeField] private float speed, timeBetweenShots,  range, reloadTime;
+        private bool FastShot;
+        private bool  readyToShoot, reloading;
+        [SerializeField] private Transform attackPoint;
         [SerializeField] private LayerMask whatisenemy;
         private RaycastHit rayHit;
 
@@ -38,9 +37,9 @@ namespace Guns
         }
         public void Shoot()
         {
-            if (readyToShoot || shooting && !reloading && bulletsLeft > 0)
+            if (readyToShoot  && !reloading && bulletsLeft >= bulletsPerShot)
             {
-               for(int i = 0; i < bulletsPerShot; i++)
+                for (int i = 0; i < bulletsPerShot; i++)
                 {
                     bulletsShot = bulletsPerShot;
 
@@ -60,6 +59,7 @@ namespace Guns
                 }
 
             }
+            else return;
         }
         private void ResetShot()
         {
@@ -67,10 +67,9 @@ namespace Guns
         }
         private void Bullet()
         {
-
             GameObject inst = Instantiate(ball, attackPoint.position, attackPoint.rotation);
             Rigidbody rb = inst.GetComponent<Rigidbody>();
-            rb.AddForce(speed * attackPoint.up, ForceMode.Impulse);
+            rb.AddForce(speed * attackPoint.up , ForceMode.Impulse);
      
 
             Destroy(inst,5);

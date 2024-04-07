@@ -5,7 +5,7 @@ public class WeaponUser : MonoBehaviour
      public  Gun Gun;
     public void OnFire()
     {
-        if (Gun != null)
+        if (Gun != null )
         {
             Gun.Shoot();
             Debug.Log("pew");

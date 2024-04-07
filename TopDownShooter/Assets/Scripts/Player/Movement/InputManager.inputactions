@@ -56,8 +56,8 @@
                     "id": "84d0e5a5-7b4d-4563-9562-2582853ad1c0",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Press(pressPoint=2.95)",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "reload",
@@ -261,18 +261,7 @@
                     "name": "",
                     "id": "516191dc-7f8e-4f3e-9b5f-ead82aa5f70c",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c44b5df5-9315-44de-a745-8484ec97877b",
-                    "path": "<VirtualMouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
