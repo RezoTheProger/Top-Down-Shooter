@@ -1,9 +1,11 @@
 using UnityEngine;
-
+using Guns;
 public class PickUpWeapon : MonoBehaviour
 {
-    public Rigidbody rb;
-    public CapsuleCollider coll;
+    [SerializeField] private  Rigidbody rb;
+    [SerializeField] private CapsuleCollider coll;
+    [SerializeField] private Gun Gun;
+
 
     public float dropForwardForce, dropUpwardForce;
 
@@ -28,7 +30,7 @@ public class PickUpWeapon : MonoBehaviour
     }
 
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (!equipped && IsPicking && !slotFull && collision.gameObject.CompareTag("Player")){ PickUp(collision.gameObject.transform.GetChild(1).transform); IsPicking = false; }
 
@@ -49,7 +51,7 @@ public class PickUpWeapon : MonoBehaviour
         rb.isKinematic = true;
         coll.isTrigger = true;
 
-        //Enable script
+        WeaponUser.Gun = Gun;
     }
 
     private void Drop()

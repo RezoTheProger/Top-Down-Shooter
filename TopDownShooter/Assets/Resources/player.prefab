@@ -317,7 +317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93a6f896efe40f4e9c28a42043f3d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 0}
+  rb: {fileID: 0}
+  coll: {fileID: 0}
+  dropForwardForce: 0
+  dropUpwardForce: 0
+  equipped: 0
 --- !u!114 &3488692761924513355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,10 +461,10 @@ MonoBehaviour:
     m_ActionName: Player/reload[/Keyboard/r]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4137637791319345002}
-        m_TargetAssemblyTypeName: PickUpWeapon, Assembly-CSharp
-        m_MethodName: OnPickUp
-        m_Mode: 1
+      - m_Target: {fileID: 8804905935871090929}
+        m_TargetAssemblyTypeName: WeaponUser, Assembly-CSharp
+        m_MethodName: OnPick
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -471,6 +475,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1ebeb431-212b-44a4-9b34-68cef3e684cc
     m_ActionName: Player/PickUp[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8804905935871090929}
+        m_TargetAssemblyTypeName: WeaponUser, Assembly-CSharp
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 76e897f1-a785-4e41-aa43-11e3c072c44a
+    m_ActionName: Player/Throw[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

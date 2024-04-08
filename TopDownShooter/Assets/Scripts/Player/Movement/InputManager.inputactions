@@ -70,12 +70,12 @@
                 },
                 {
                     "name": "PickUp",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "1ebeb431-212b-44a4-9b34-68cef3e684cc",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Hold(duration=2)",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Throw",
@@ -334,7 +334,7 @@
                     "name": "",
                     "id": "1fd55954-a86a-46cb-b81d-34e379146b55",
                     "path": "<Gamepad>/buttonNorth",
-                    "interactions": "Hold",
+                    "interactions": "Hold(duration=2)",
                     "processors": "",
                     "groups": "",
                     "action": "PickUp",
@@ -345,7 +345,7 @@
                     "name": "",
                     "id": "714a14f0-56c0-450d-8092-dbde2816c9dc",
                     "path": "<Keyboard>/e",
-                    "interactions": "Hold",
+                    "interactions": "Hold(duration=2)",
                     "processors": "",
                     "groups": "",
                     "action": "PickUp",
@@ -356,7 +356,7 @@
                     "name": "",
                     "id": "e956c584-caef-4089-9dc7-f4eee40a489a",
                     "path": "<Keyboard>/q",
-                    "interactions": "",
+                    "interactions": "MultiTap(tapDelay=0.4)",
                     "processors": "",
                     "groups": "",
                     "action": "Throw",

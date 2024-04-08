@@ -1,9 +1,10 @@
 using Guns;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.InputSystem;
 public class WeaponUser : MonoBehaviour
 {
-     public  Gun Gun;
+     public static Gun Gun;
     
     private PhotonView view;
 
@@ -24,12 +25,15 @@ public class WeaponUser : MonoBehaviour
         if (Gun != null && view.IsMine)
             Gun.Reload();
     }
-    public void OnPick()
+    public void OnPick(InputAction.CallbackContext context)
     {
+        if(context.performed && view.IsMine )
         PickUpWeapon.IsPicking = true;
     }
-    public void OnThrow()
+    public void OnThrow(InputAction.CallbackContext context)
     {
-        PickUpWeapon.IsThrowing = true;
+        if (context.performed && view.IsMine)
+
+            PickUpWeapon.IsThrowing = true;
     }
 }
