@@ -4,7 +4,9 @@ using UnityEngine;
 public class WeaponUser : MonoBehaviour
 {
      public  Gun Gun;
+    
     private PhotonView view;
+
     private void Start()
     {
         view = GetComponent<PhotonView>();
@@ -21,5 +23,13 @@ public class WeaponUser : MonoBehaviour
     {
         if (Gun != null && view.IsMine)
             Gun.Reload();
+    }
+    public void OnPick()
+    {
+        PickUpWeapon.IsPicking = true;
+    }
+    public void OnThrow()
+    {
+        PickUpWeapon.IsThrowing = true;
     }
 }

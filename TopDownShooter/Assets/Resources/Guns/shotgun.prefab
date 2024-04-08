@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 3121092162952657369}
   - component: {fileID: 483308039564569920}
   - component: {fileID: 3841969610813292717}
+  - component: {fileID: -205471836915073414}
+  - component: {fileID: -6749210047787565351}
   m_Layer: 0
   m_Name: shotgun
   m_TagString: Gun
@@ -61,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 7750740895410395211}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 591.5467, y: 81.58921, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8333333, y: 0.8333333, z: 0.666}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -189,3 +191,47 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-205471836915073414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750740895410395211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93a6f896efe40f4e9c28a42043f3d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: -9145606353653659131, guid: b9db458285eb6bb438c751cca74f3644, type: 3}
+  coll: {fileID: 7052920869280482055, guid: b9db458285eb6bb438c751cca74f3644, type: 3}
+  dropForwardForce: 10
+  dropUpwardForce: 2
+  equipped: 0
+--- !u!54 &-6749210047787565351
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750740895410395211}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

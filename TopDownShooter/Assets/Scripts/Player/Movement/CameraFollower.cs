@@ -3,11 +3,15 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+     private Transform target;
     [SerializeField] private float Smoother;
     [SerializeField] private Vector3 Offset;
     private Vector3 velocity = Vector3.zero;
 
+    private void Start()
+    {
+        target = transform.parent.gameObject.transform.GetChild(1).gameObject.transform;
+    }
     private void Update()
     {
         if (target != null)

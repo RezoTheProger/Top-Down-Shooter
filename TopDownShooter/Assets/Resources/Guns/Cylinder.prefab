@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7052920869280482055}
   - component: {fileID: 3075907923312210514}
   - component: {fileID: 8574053806224447754}
+  - component: {fileID: -8657434940515151688}
+  - component: {fileID: -9145606353653659131}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Gun
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2730853480021997569}
   serializedVersion: 2
   m_LocalRotation: {x: 0.68031263, y: -0, z: -0, w: 0.7329221}
-  m_LocalPosition: {x: -1.9169998, y: 38.697426, z: -49.745945}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -158,6 +160,52 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-8657434940515151688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2730853480021997569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93a6f896efe40f4e9c28a42043f3d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: -9145606353653659131}
+  coll: {fileID: 7052920869280482055}
+  gunContainer: {fileID: 0}
+  fpsCam: {fileID: 0}
+  dropForwardForce: 0
+  dropUpwardForce: 0
+  equipped: 0
+--- !u!54 &-9145606353653659131
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2730853480021997569}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8344285466130485550
 GameObject:
   m_ObjectHideFlags: 0
