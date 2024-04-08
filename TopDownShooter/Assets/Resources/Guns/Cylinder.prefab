@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2807368437992164366}
   - component: {fileID: 7052920869280482055}
   - component: {fileID: 3075907923312210514}
+  - component: {fileID: 8574053806224447754}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Gun
@@ -135,6 +136,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ball: {fileID: 7210053875240781853, guid: 28444b7580578e445975035185a69e2c, type: 3}
+--- !u!114 &8574053806224447754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2730853480021997569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8344285466130485550
 GameObject:
   m_ObjectHideFlags: 0

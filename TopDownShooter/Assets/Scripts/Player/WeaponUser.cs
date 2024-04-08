@@ -1,11 +1,17 @@
 using Guns;
+using Photon.Pun;
 using UnityEngine;
 public class WeaponUser : MonoBehaviour
 {
      public  Gun Gun;
+    private PhotonView view;
+    private void Start()
+    {
+        view = GetComponent<PhotonView>();
+    }
     public void OnFire()
     {
-        if (Gun != null )
+        if (Gun != null && view.IsMine )
         {
             Gun.Shoot();
             Debug.Log("pew");
@@ -13,7 +19,7 @@ public class WeaponUser : MonoBehaviour
     }
     public void OnReload()
     {
-        if (Gun != null)
+        if (Gun != null && view.IsMine)
             Gun.Reload();
     }
 }

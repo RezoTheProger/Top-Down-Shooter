@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float CurrentSpeed;
@@ -12,8 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 Move, mouseLook, joystickLook;
     private Vector3 _RotTarget;
 
+    PhotonView view;
     private void Start()
     {
+        view = GetComponent<PhotonView>();
         CurrentSpeed = WalkSpeed;
         if (Application.platform == (RuntimePlatform.WindowsPlayer | RuntimePlatform.OSXPlayer | RuntimePlatform.LinuxPlayer)) isPc = true;
         else isPc=false;
@@ -62,31 +65,36 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        Vector3 Movement = new(Move.x, 0f, Move.y);
-        if (Movement != Vector3.zero)
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Movement),RotSpeed);
-        transform.Translate( CurrentSpeed * Time.deltaTime * Movement, Space.World); 
+        if (view.IsMine)
+        {
+            Vector3 Movement = new(Move.x, 0f, Move.y);
+            if (Movement != Vector3.zero)
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Movement), RotSpeed);
+            transform.Translate(CurrentSpeed * Time.deltaTime * Movement, Space.World);
+        }
     }
 
     private void MovePlayerWithAim()
     {
-        if (isPc)
+        if (view.IsMine)
         {
-            var lookPos = _RotTarget - transform.position;
-            lookPos.y = 0;
-            var rot = Quaternion.LookRotation(lookPos);
-            Vector3 aimDir = new(_RotTarget.x, 0f, _RotTarget.y);
-            if (aimDir != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, rot, RotSpeed);
-        }
-        else
-        {
-            Vector3 aimDir = new(joystickLook.x, 0f, joystickLook.y);
-            if (aimDir != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(aimDir), RotSpeed);
+            if (isPc)
+            {
+                var lookPos = _RotTarget - transform.position;
+                lookPos.y = 0;
+                var rot = Quaternion.LookRotation(lookPos);
+                Vector3 aimDir = new(_RotTarget.x, 0f, _RotTarget.y);
+                if (aimDir != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, rot, RotSpeed);
+            }
+            else
+            {
+                Vector3 aimDir = new(joystickLook.x, 0f, joystickLook.y);
+                if (aimDir != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(aimDir), RotSpeed);
 
+            }
+            Vector3 movement = new(Move.x, 0f, Move.y);
+            transform.Translate(CurrentSpeed * Time.deltaTime * movement, Space.World);
         }
-        Vector3 movement = new(Move.x, 0f, Move.y);
-        transform.Translate(CurrentSpeed * Time.deltaTime * movement, Space.World);
     }
-
 
 }
