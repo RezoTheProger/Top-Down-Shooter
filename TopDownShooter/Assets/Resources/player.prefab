@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentSpeed: 0
   WalkSpeed: 5
-  SprintSpeed: 15
+  SprintSpeed: 10
   RotSpeed: 0.15
   isPc: 1
 --- !u!114 &8804905935871090929
