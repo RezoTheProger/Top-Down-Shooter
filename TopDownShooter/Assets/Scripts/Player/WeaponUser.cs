@@ -25,15 +25,5 @@ public class WeaponUser : MonoBehaviour
         if (Gun != null && view.IsMine)
             Gun.Reload();
     }
-    public void OnPick(InputAction.CallbackContext context)
-    {
-        if(context.performed && view.IsMine )
-        PickUpWeapon.IsPicking = true;
-    }
-    public void OnThrow(InputAction.CallbackContext context)
-    {
-        if (context.performed && view.IsMine)
-
-            PickUpWeapon.IsThrowing = true;
-    }
+   
 }
