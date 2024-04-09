@@ -16,7 +16,7 @@ public class PickUpWeapon : MonoBehaviour
     private PhotonView view;
 
     private bool IsPicking;
-    private static bool Picked;
+    private  bool Picked;
     private void Start()
     {
         view = GetComponent<PhotonView>();
