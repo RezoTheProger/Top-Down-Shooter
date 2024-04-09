@@ -95,6 +95,8 @@ public class PickUpWeapon : MonoBehaviour
             rb.AddTorque(new Vector3(random, random, random) * 10);
 
             //Disable script
+            WeaponUser.Gun = null;
+
         }
 
     }
