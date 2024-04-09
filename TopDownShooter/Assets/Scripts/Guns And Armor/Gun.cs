@@ -1,4 +1,5 @@
 using UnityEngine;
+using Photon.Pun;
 namespace Guns
 {
     public  class Gun : MonoBehaviour
@@ -67,7 +68,7 @@ namespace Guns
         }
         private void Bullet()
         {
-            GameObject inst = Instantiate(ball, attackPoint.position, attackPoint.rotation);
+            GameObject inst = PhotonNetwork.Instantiate(ball.name, attackPoint.position, attackPoint.rotation);
             Rigidbody rb = inst.GetComponent<Rigidbody>();
             rb.AddForce(speed * attackPoint.up , ForceMode.Impulse);
      

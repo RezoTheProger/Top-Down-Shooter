@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class SpawnGun : MonoBehaviour
 {
     [SerializeField] private List<Transform> Place = new();
@@ -11,7 +11,7 @@ public class SpawnGun : MonoBehaviour
         {
 
             int j = Random.Range(0, Place.Count);
-            GameObject GO = Instantiate(Gun[i], Place[j].position, Gun[i].transform.rotation);
+            var GO = PhotonNetwork.Instantiate(Gun[i].name, Place[j].position, Gun[i].transform.rotation);
             GO.transform.SetParent(transform);
             
             Place.RemoveAt(j);
