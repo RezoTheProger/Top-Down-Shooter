@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     PhotonView view;
     private void Start()
     {
+        transform.parent = SpawnPlayers.Parent;
         view = GetComponent<PhotonView>();
         CurrentSpeed = WalkSpeed;
         if (Application.platform == (RuntimePlatform.WindowsPlayer | RuntimePlatform.OSXPlayer | RuntimePlatform.LinuxPlayer)) isPc = true;

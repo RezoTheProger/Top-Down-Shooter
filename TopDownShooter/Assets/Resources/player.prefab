@@ -151,13 +151,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5084898891034843756}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.93, y: 0.051, z: 1.133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6736113439138653152}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &5548819006790231597
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 2881570484177521743}
   - component: {fileID: 1260925723118950746}
   - component: {fileID: 8804905935871090929}
-  - component: {fileID: 4137637791319345002}
   - component: {fileID: 3488692761924513355}
   - component: {fileID: 3803222505621436534}
   - component: {fileID: 1387719131925402087}
@@ -193,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5548819006790231597}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -3.58, y: 6.96, z: 1.18}
   m_LocalScale: {x: 0.42360765, y: 0.52950954, z: 0.42360765}
   m_ConstrainProportionsScale: 0
@@ -201,7 +200,7 @@ Transform:
   - {fileID: 8825183944380239563}
   - {fileID: 1032478449583855767}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &375325381041285495
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -304,24 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0fb0aad1914b846902cc3f0cfeb4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gun: {fileID: 0}
---- !u!114 &4137637791319345002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5548819006790231597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93a6f896efe40f4e9c28a42043f3d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  coll: {fileID: 0}
-  dropForwardForce: 0
-  dropUpwardForce: 0
-  equipped: 0
 --- !u!114 &3488692761924513355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
+  m_SynchronizeScale: 1
   m_UseLocal: 1
 --- !u!114 &-2146651749250134838
 MonoBehaviour:
