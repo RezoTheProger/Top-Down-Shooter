@@ -6,7 +6,7 @@ using UnityEngine;
 public class MasterManager : ScriptableObjectSingleton<MasterManager>
 {
 
-    [SerializeField] public GameSettings gameSettings;
+     public GameSettings gameSettings;
     public  static GameSettings GameSettings { get { return Instance.gameSettings; } }
 
 }

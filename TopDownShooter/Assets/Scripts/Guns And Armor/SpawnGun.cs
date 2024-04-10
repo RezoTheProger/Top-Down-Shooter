@@ -5,10 +5,10 @@ public class SpawnGun : MonoBehaviour
 {
     [SerializeField] private List<Transform> Place = new();
     [SerializeField] private GameObject[] Gun;
-    private static bool Placed =true;
+    private static bool Placed ;
     private void Start()
     {
-        if (Placed)
+        if (!Placed)
         {
             for (int i = 0; i < Place.Count; i++)
             {
@@ -19,7 +19,8 @@ public class SpawnGun : MonoBehaviour
 
                 Place.RemoveAt(j);
             }
+            Placed = true;
+
         }
-        Placed = false;
     }
 }
