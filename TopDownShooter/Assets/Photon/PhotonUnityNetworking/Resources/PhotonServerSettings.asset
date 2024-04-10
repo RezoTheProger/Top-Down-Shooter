@@ -39,6 +39,11 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - Drop
+  - PickUp
+  - Bullet
+  - OnCollisionEnter
+  - OnColl
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

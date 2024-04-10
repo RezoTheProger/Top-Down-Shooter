@@ -44,12 +44,9 @@ GameObject:
   - component: {fileID: 7429428911496431926}
   - component: {fileID: 483308039564569920}
   - component: {fileID: -6749210047787565351}
-  - component: {fileID: -205471836915073414}
   - component: {fileID: 2725032574863041435}
   - component: {fileID: 5681788239150338973}
-  - component: {fileID: 8934502388880583635}
-  - component: {fileID: 5692140439349505124}
-  - component: {fileID: 2588656231219479670}
+  - component: {fileID: 3302251622400989889}
   m_Layer: 0
   m_Name: shotgun
   m_TagString: Gun
@@ -67,7 +64,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8333333, y: 0.8333333, z: 0.666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4582355681964051113}
@@ -176,24 +173,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-205471836915073414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7750740895410395211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93a6f896efe40f4e9c28a42043f3d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: -6749210047787565351}
-  coll: {fileID: 5681788239150338973}
-  Gun: {fileID: 483308039564569920}
-  dropForwardForce: 10
-  dropUpwardForce: 2
-  equipped: 0
 --- !u!65 &2725032574863041435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -238,113 +217,7 @@ CapsuleCollider:
   m_Height: 2.0000005
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.000000089406996}
---- !u!114 &8934502388880583635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7750740895410395211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 6efb65424bd10224997882f83efb387c, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c01623a7-bfae-48a4-8aab-c0665c34fe66
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b307398c-3e09-453c-8dab-e9c5fbb046fc
-    m_ActionName: Player/mouseLook[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e0544fa0-4623-4ae4-a8a6-9afbfce57c38
-    m_ActionName: Player/JoystickLook
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 64729b36-72fd-43a3-afa1-82ceb71dcb41
-    m_ActionName: Player/Sprint[/Keyboard/shift]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f8d7bd04-3a92-44ee-8234-9a90af747e0b
-    m_ActionName: Player/SprintFinish[/Keyboard/shift]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 84d0e5a5-7b4d-4563-9562-2582853ad1c0
-    m_ActionName: Player/Fire[/Mouse/leftButton,/Keyboard/j]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e1889c7b-2608-4ca2-ab59-c8c2f4fdaaea
-    m_ActionName: Player/reload[/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -205471836915073414}
-        m_TargetAssemblyTypeName: PickUpWeapon, Assembly-CSharp
-        m_MethodName: PickUp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 1ebeb431-212b-44a4-9b34-68cef3e684cc
-    m_ActionName: Player/PickUp[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -205471836915073414}
-        m_TargetAssemblyTypeName: PickUpWeapon, Assembly-CSharp
-        m_MethodName: Drop
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 76e897f1-a785-4e41-aa43-11e3c072c44a
-    m_ActionName: Player/Throw[/Keyboard/q]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &5692140439349505124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7750740895410395211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 1
-  m_UseLocal: 1
---- !u!114 &2588656231219479670
+--- !u!114 &3302251622400989889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,8 +235,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 5692140439349505124}
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

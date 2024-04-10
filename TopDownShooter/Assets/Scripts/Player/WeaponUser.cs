@@ -1,10 +1,9 @@
 using Guns;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.InputSystem;
 public class WeaponUser : MonoBehaviour
 {
-     public static Gun Gun;
+     public Gun Gun;
     
     private PhotonView view;
 

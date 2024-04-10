@@ -48,8 +48,9 @@ namespace Guns
 
 
 
+                    PhotonView view = GetComponent<PhotonView>();
+                    view.RPC("Bullet", RpcTarget.AllBuffered);
 
-                    Bullet();
                     bulletsLeft--;
                     bulletsShot++;
 
@@ -66,11 +67,12 @@ namespace Guns
         {
             readyToShoot = true;
         }
+        [PunRPC]
         private void Bullet()
         {
             GameObject inst = PhotonNetwork.Instantiate(ball.name, attackPoint.position, attackPoint.rotation);
             Rigidbody rb = inst.GetComponent<Rigidbody>();
-            rb.AddForce(speed * attackPoint.transform.forward * ((float)PhotonNetwork.Time) , ForceMode.Impulse);
+            rb.AddForce(speed * attackPoint.up , ForceMode.Impulse);
      
 
             Destroy(inst,5);

@@ -4,6 +4,8 @@ using UnityEngine;
 public class SpawnPlayers : MonoBehaviour
 {
     [SerializeField] private GameObject PlayerPrefab;
+    [SerializeField] private Transform[] Place;
+
     [SerializeField] private  Transform Parentt;
 
     public static Transform Parent;
@@ -14,8 +16,8 @@ public class SpawnPlayers : MonoBehaviour
     private void Awake()
     {
         Parent = Parentt;
-        Vector3 rndPos = new(Random.Range(minX, maxX), Y, Random.Range(minZ, maxZ));
-         PhotonNetwork.Instantiate(PlayerPrefab.name, rndPos, Quaternion.identity);
+        int rnd = Random.Range(0, 2);
+         PhotonNetwork.Instantiate(PlayerPrefab.name, Place[rnd].position , Quaternion.identity);
         
     }
 

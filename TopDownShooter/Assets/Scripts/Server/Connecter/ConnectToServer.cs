@@ -3,11 +3,13 @@ using Photon.Realtime;
 using UnityEngine.SceneManagement;
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
+    public MasterManager MyMaster;
+
     private void Start()
     {
-        PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
+        PhotonNetwork.GameVersion = MyMaster.gameSettings.GameVersion;
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.NickName = MasterManager.GameSettings.NickName;
+        PhotonNetwork.NickName = MyMaster.gameSettings.NickName;
 
     }
     public override void OnConnectedToMaster()

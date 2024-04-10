@@ -5,21 +5,19 @@ public class SpawnGun : MonoBehaviour
 {
     [SerializeField] private List<Transform> Place = new();
     [SerializeField] private GameObject[] Gun;
-    private static bool Placed ;
     private void Start()
     {
-        if (!Placed)
+        if (PhotonNetwork.IsMasterClient)
         {
             for (int i = 0; i < Place.Count; i++)
             {
 
                 int j = Random.Range(0, Place.Count);
-                var GO = PhotonNetwork.Instantiate(Gun[i].name, Place[j].position, Gun[i].transform.rotation);
-                GO.transform.SetParent(transform);
+                PhotonNetwork.Instantiate(Gun[i].name, Place[j].position, Gun[i].transform.rotation).transform.SetParent(transform); ;
+                
 
                 Place.RemoveAt(j);
             }
-            Placed = true;
 
         }
     }
