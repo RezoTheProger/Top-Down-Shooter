@@ -8,7 +8,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     [SerializeField] private TMP_InputField JoinInput;
     public void CreateRoom()
     {
-        if (!PhotonNetwork.IsConnected) return print("Connexion Expired");
+        if (!PhotonNetwork.IsConnected) return ;
         RoomOptions options = new();
         options.MaxPlayers = 10;
         PhotonNetwork.CreateRoom(CreateInput.text,options,TypedLobby.Default) ;
