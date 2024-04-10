@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     {
    
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Gun") || collision.gameObject.CompareTag("Bullet")) return;
-
+        gameObject.SetActive(false);
          Destroy(gameObject,5);
 
     }
