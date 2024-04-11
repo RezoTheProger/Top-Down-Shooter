@@ -1,9 +1,11 @@
 using Photon.Pun;
 using UnityEngine;
-
+using TMPro;
 public class SpawnPlayers : MonoBehaviour
 {
     [SerializeField] private GameObject PlayerPrefab;
+    [SerializeField] private TMP_Text txt;
+
     [SerializeField] private Transform[] Place;
 
     [SerializeField] private  Transform Parentt;
@@ -20,5 +22,8 @@ public class SpawnPlayers : MonoBehaviour
          PhotonNetwork.Instantiate(PlayerPrefab.name, Place[rnd].position , Quaternion.identity);
         
     }
-
+    private void FixedUpdate()
+    {
+        txt.text ="Players: "+ PhotonNetwork.CurrentRoom.PlayerCount.ToString();
+    }
 }
