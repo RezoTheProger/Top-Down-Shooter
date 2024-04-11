@@ -11,6 +11,7 @@ public class PickUpWeapon : MonoBehaviour
      private PhotonView view;
 
     private GameObject GO;
+    private Transform MainGO;
     [SerializeField] private float dropForwardForce, dropUpwardForce;
 
     private bool slotFull, IsPicking,Picked;
@@ -81,6 +82,7 @@ public class PickUpWeapon : MonoBehaviour
     [PunRPC]
     private void Drop()
     {
+
         Picked = false;
         slotFull = false;
 
