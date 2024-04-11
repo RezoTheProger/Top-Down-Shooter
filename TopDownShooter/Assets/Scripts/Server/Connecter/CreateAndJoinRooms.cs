@@ -19,9 +19,11 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     }
     public void CreateRoom()
     {
+        
         if (!PhotonNetwork.IsConnected) return ;
         RoomOptions options = new();
         options.MaxPlayers = 10;
+        options.CleanupCacheOnLeave = false;
         PhotonNetwork.CreateRoom(CreateInput.text,options,TypedLobby.Default) ;
     }
 

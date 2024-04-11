@@ -6,7 +6,6 @@ namespace Guns
     {
         [SerializeField] private  int  damage, magSize, bulletsPerShot, bulletsLeft, bulletsShot;
         [SerializeField] private float speed, timeBetweenShots,  range, reloadTime;
-        private bool FastShot;
         private bool  readyToShoot, reloading;
         [SerializeField] private Transform attackPoint;
         [SerializeField] private LayerMask whatisenemy;
@@ -21,7 +20,7 @@ namespace Guns
             readyToShoot = true;
             
         }
-
+     
         public void Reload()
         {
             if (!reloading && bulletsLeft < magSize)

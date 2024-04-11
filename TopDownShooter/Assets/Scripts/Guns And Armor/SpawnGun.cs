@@ -13,7 +13,8 @@ public class SpawnGun : MonoBehaviour
             {
 
                 int j = Random.Range(0, Place.Count);
-                PhotonNetwork.Instantiate(Gun[i].name, Place[j].position, Gun[i].transform.rotation).transform.SetParent(transform); ;
+                PhotonNetwork.InstantiateRoomObject(Gun[i].name, Place[j].position, Gun[i].transform.rotation).transform.SetParent(transform);
+                
                 
 
                 Place.RemoveAt(j);
