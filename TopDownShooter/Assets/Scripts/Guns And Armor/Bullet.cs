@@ -1,4 +1,3 @@
-using Photon.Pun;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -8,14 +7,9 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Gun") || collision.gameObject.CompareTag("Bullet")) return;
 
-        PhotonView PV = GetComponent<PhotonView>();
-        PV.RPC("OnColl", RpcTarget.AllBuffered);
+        Destroy(gameObject, 5);
+
 
     }
-    [PunRPC]
-    private void OnColl()
-    {
-        gameObject.SetActive(false);
-        Destroy(gameObject, 5);
-    }
+
 }

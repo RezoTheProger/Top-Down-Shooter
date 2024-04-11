@@ -14,13 +14,11 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     }
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinLobby();
+        SceneManager.LoadScene("Lobby");
+
         print(PhotonNetwork.LocalPlayer.NickName);
     }
-    public override void OnJoinedLobby()
-    {
-        SceneManager.LoadScene("Lobby");
-    }
+    
     public override void OnDisconnected(DisconnectCause cause)
     {
         print("Disconnected from server, reason:" + cause.ToString() + "Try again later.");

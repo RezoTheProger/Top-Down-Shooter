@@ -48,7 +48,8 @@ public class PickUpWeapon : MonoBehaviour
     }
     [PunRPC]
     private void PickUp()
-    {
+    { 
+        //GOTO
         rb = GO.GetComponent<Rigidbody>();
         coll = GO.GetComponent<CapsuleCollider>();
         Gun = GO.GetComponent<Gun>();

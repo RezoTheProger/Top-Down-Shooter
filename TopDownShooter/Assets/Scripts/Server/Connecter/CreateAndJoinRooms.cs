@@ -12,6 +12,11 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     [SerializeField] private Transform Content;
     private List<RoomListing> list = new();
 
+    private void Awake()
+    {
+        PhotonNetwork.JoinLobby();
+
+    }
     public void CreateRoom()
     {
         if (!PhotonNetwork.IsConnected) return ;
@@ -34,6 +39,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     }
 
+   
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
