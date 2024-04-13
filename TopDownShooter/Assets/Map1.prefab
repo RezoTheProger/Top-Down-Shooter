@@ -3499,7 +3499,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4167268769610443953}
-  - component: {fileID: 6762067753228781822}
   m_Layer: 0
   m_Name: Places
   m_TagString: Untagged
@@ -3525,25 +3524,6 @@ Transform:
   - {fileID: 2103550263284681184}
   m_Father: {fileID: 2063971037148810608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6762067753228781822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4861793253125685392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df0d1c05fabb3746893fc0951d403a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Place:
-  - {fileID: 123780009942632384}
-  - {fileID: 518722552001435714}
-  - {fileID: 2103550263284681184}
-  Gun:
-  - {fileID: 2730853480021997569, guid: b9db458285eb6bb438c751cca74f3644, type: 3}
-  - {fileID: 7750740895410395211, guid: 3fc83153afc88eb4ca6b79637ee334bf, type: 3}
 --- !u!1 &4963170379359366043
 GameObject:
   m_ObjectHideFlags: 0

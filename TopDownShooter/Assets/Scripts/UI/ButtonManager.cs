@@ -1,8 +1,7 @@
 
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.SceneManagement;
-public class ButtonManager : MonoBehaviour
+public class ButtonManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject PauseMenu;
 
@@ -19,10 +18,5 @@ public class ButtonManager : MonoBehaviour
     {
         return;
     }
-    public void Quit()
-    {
-        PhotonNetwork.LeaveRoom(true);
-        PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
-        PhotonNetwork.LoadLevel("Lobby");
-    }
+   
 }

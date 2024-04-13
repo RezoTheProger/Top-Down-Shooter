@@ -10,7 +10,7 @@ public class RoomListing : MonoBehaviour
     {
         ri = roomInfo;
         txt[0].text =  roomInfo.Name;
-        txt[1].text = "Max players: " + roomInfo.PlayerCount + "/" + roomInfo.MaxPlayers ;
+        txt[1].text =  roomInfo.PlayerCount + "/" + roomInfo.MaxPlayers ;
 
 
     }
