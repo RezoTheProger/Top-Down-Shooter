@@ -23,7 +23,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsConnected) return ;
         RoomOptions options = new();
         options.MaxPlayers = 10;
-        options.CleanupCacheOnLeave = false;
+        options.CleanupCacheOnLeave = true;
         PhotonNetwork.CreateRoom(CreateInput.text,options,TypedLobby.Default) ;
     }
 

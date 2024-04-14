@@ -10,6 +10,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
         PhotonNetwork.GameVersion = MyMaster.gameSettings.GameVersion;
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.NickName = MyMaster.gameSettings.NickName;
+        if(!PhotonNetwork.IsConnected) PhotonNetwork.ConnectUsingSettings();
 
     }
     public override void OnConnectedToMaster()

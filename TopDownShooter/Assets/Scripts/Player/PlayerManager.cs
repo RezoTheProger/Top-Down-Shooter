@@ -8,10 +8,14 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int Health;
     [SerializeField] private Slider HealthSlider;
     public void Quit()
-    { 
-        PhotonNetwork.LeaveRoom(true);
-        PhotonNetwork.LoadLevel("Lobby");
+    {
+        PhotonNetwork.LoadLevel("LoadingScene");
+
+        PhotonNetwork.LeaveRoom(false);
+        
     }
+    
+   
     private void Awake()
     {
         HealthSlider.value = Health;
@@ -25,4 +29,5 @@ public class PlayerManager : MonoBehaviour
         HealthSlider.value = Health;
         if (Health <= 0) Destroy(gameObject);
     }
+
 }

@@ -31,25 +31,29 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     }
     private void FixedUpdate()
     {
-        txt.text = "Players: " + PhotonNetwork.CurrentRoom.PlayerCount.ToString();
+        if (PhotonNetwork.CurrentRoom.PlayerCount != 0)
+            txt.text = "Players: " + PhotonNetwork.CurrentRoom.PlayerCount.ToString();
+        if (!PhotonNetwork.IsConnected) PhotonNetwork.ConnectUsingSettings();
 
     }
-    
+
     public void Spawnn()
     {
-
-        StartButton.SetActive(false);
-        for (int i = 0; i < GunPlace.Count; i++)
+        if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
         {
+            StartButton.SetActive(false);
+            for (int i = 0; i < GunPlace.Count; i++)
+            {
 
-            int j = Random.Range(0, GunPlace.Count);
-            PhotonNetwork.InstantiateRoomObject(Gun[i].name, Place[j].position, Gun[i].transform.rotation).transform.SetParent(transform);
+                int j = Random.Range(0, GunPlace.Count);
+                PhotonNetwork.InstantiateRoomObject(Gun[i].name, GunPlace[j].position, Gun[i].transform.rotation).transform.SetParent(transform);
 
 
 
-            GunPlace.RemoveAt(j);
+                GunPlace.RemoveAt(j);
+            }
+
         }
-
     }
 
 }
