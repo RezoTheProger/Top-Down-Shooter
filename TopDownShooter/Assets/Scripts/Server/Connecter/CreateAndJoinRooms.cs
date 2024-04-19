@@ -3,24 +3,31 @@ using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 using System.Collections.Generic;
-
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
     [SerializeField] private TMP_InputField CreateInput;
+    [SerializeField] private GameObject Create;
+
     [SerializeField] private TMP_InputField JoinInput;
     [SerializeField] private RoomListing RoomListing;
     [SerializeField] private Transform Content;
     private List<RoomListing> list = new();
 
+    
     private void Awake()
     {
         PhotonNetwork.JoinLobby();
 
     }
+  
+    public void CreateOpener()
+    {
+        Create.SetActive(true);
+    }
+
     public void CreateRoom()
     {
         
-        if (!PhotonNetwork.IsConnected) return ;
         RoomOptions options = new();
         options.MaxPlayers = 10;
         options.CleanupCacheOnLeave = true;
@@ -29,19 +36,13 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
 
 
-    public override void OnCreatedRoom()
-    {
-
-        Debug.Log("CreatedRoom");
-    }
-
-    public override void OnCreateRoomFailed(short returnCode, string message)
-    {
-        Debug.Log("Room Creation failed" +message);
-
-    }
-
    
+
+    public override void OnCreateRoomFailed(short returnCode, string message)=> Debug.Log("Room Creation failed" +message);
+
+    
+
+    public void JoinRand() => PhotonNetwork.JoinRandomOrCreateRoom();
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
@@ -67,10 +68,12 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     }
     public void JoinRoom()
     {
+        
         PhotonNetwork.JoinRoom(JoinInput.text);
     }
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel(2);
     }
+    
 }

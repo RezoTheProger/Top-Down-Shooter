@@ -1,16 +1,17 @@
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
     public MasterManager MyMaster;
-
+    public TMP_Text problemString;
+ 
     private void Start()
     {
         PhotonNetwork.GameVersion = MyMaster.gameSettings.GameVersion;
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.NickName = MyMaster.gameSettings.NickName;
-        if(!PhotonNetwork.IsConnected) PhotonNetwork.ConnectUsingSettings();
 
     }
     public override void OnConnectedToMaster()
@@ -22,8 +23,10 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     
     public override void OnDisconnected(DisconnectCause cause)
     {
-        print("Disconnected from server, reason:" + cause.ToString() + "Try again later.");
-
+        problemString.text = "Disconnected from server, reason:" + cause.ToString() + " Retrying...";
         
+        PhotonNetwork.ConnectUsingSettings();
+
     }
+    
 }
