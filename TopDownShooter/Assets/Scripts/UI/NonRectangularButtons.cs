@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 public class NonRectangularButtons : MonoBehaviour
 {
     private float alphathreshold = .1f;
@@ -9,6 +10,6 @@ public class NonRectangularButtons : MonoBehaviour
         this.GetComponent<Image>().alphaHitTestMinimumThreshold = alphathreshold;
     }
 
-    
+
     
 }
